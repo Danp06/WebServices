@@ -7,4 +7,4 @@ def person_entity(item) -> dict:
 
 
 def people_entity(entity) -> list:
-    [person_entity(item) for item in entity]
+    return [person_entity(item) for item in entity]
