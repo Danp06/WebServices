@@ -14,8 +14,11 @@ def list_people():
 @people.post('/people')
 def create_people(person: People):
     new_person = dict(person)
-    id = conn.local.people.insert_one(new_person).inserted_id
-    return str(id)
+    del new_person["id"]
+
+    id = conn.local.user.insert_one(new_person).inserted_id
+    person = conn.local.user.find_one({"_id": id})
+    return person_entity(person)
 
 
 @people.get('/people/{id}')

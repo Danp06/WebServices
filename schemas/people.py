@@ -1,8 +1,8 @@
 def person_entity(item) -> dict:
     return{
-        "id": item["id"],
-        "nombre": item["Nombre"],
-        "rol": item["Rol"]
+        "id": str(item["_id"]),
+        "nombre": item["nombre"],
+        "rol": item["rol"]
     }
 
 
