@@ -2,7 +2,7 @@ def vehicle_Entity(item) -> dict:
     return{
         "id": str(item["_id"]),
         "person": str(item["person"]),
-        "status": str(item["status"]),
+        "status": bool(item["status"]),
         "placa": str(item["placa"]),
         "fecha_ingreso": str(item["fecha_ingreso"]),
         "anotaciones": str(item["anotaciones"])
